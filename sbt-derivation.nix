@@ -24,7 +24,7 @@ in
     lock-deps = callPackage ./lock-deps.nix { inherit flakeOutput; };
 
     # used by lock-deps
-    depsDerivation = (callMkDerivation {} (args // {
+    depsDerivation = (callMkDerivation { sbt = sbt; } (args // {
       depsSha256 = null;
       depsWarmupCommand = ''
         runHook preDepsWarmupCommand
