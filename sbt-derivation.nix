@@ -28,7 +28,7 @@ in
       depsSha256 = null;
       depsWarmupCommand = ''
         runHook preDepsWarmupCommand
-        sbt "dependencyList ; consoleQuick" <<< ":quit"
+        sbt "dependencyTree ; consoleQuick" <<< ":quit"
       '';
     })).deps.overrideAttrs (_: { outputHash = null; });
   };
