@@ -30,7 +30,7 @@ in
         runHook preDepsWarmupCommand
         sbt "dependencyTree ; consoleQuick" <<< ":quit"
       '';
-    })).deps.overrideAttrs (_: { outputHash = null; });
+    }));
   };
 })).overrideAttrs (oldAttrs: {
   # no longer needed
