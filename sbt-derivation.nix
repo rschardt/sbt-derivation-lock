@@ -28,7 +28,7 @@ in
       depsSha256 = null;
       depsWarmupCommand = ''
         runHook preDepsWarmupCommand
-        sbt "dependencyTree ; consoleQuick" <<< ":quit"
+        sbt --verbose "dependencyTree ; consoleQuick" <<< ":quit"
       '';
     }));
   };
